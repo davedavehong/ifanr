@@ -12,6 +12,7 @@
 #header {
   width: 100%;
   .header-logo {
+    min-height: 75px;
     width: 1120px;
     margin: 0 auto;
     a.logo {
@@ -26,7 +27,6 @@
     }
     div.sns-nav {
       z-index: -1;
-      height: 70px;
       display: inline-block;
       padding: 24px 0 0 10px;
       position: relative;
@@ -145,18 +145,19 @@ div.sns-show a {
 .icon-feed:before {
   content: "\e603";
 }
-.header-nav{
+
+.header-nav {
   width: 1120px;
   margin: 0 auto;
   position: relative;
   box-sizing: border-box;
-  ul{
+  ul {
     width: 100%;
-    li{
+    li {
       display: inline-block;
       margin-right: 31px;
       position: relative;
-      &:before{
+      &:before {
         left: 50%;
         margin-left: -10px;
         cursor: pointer;
@@ -170,36 +171,182 @@ div.sns-show a {
         -webkit-transition: opacity .3s linear;
         transition: opacity .3s linear;
       }
-      &:hover{
-        &:before{
+      &:hover {
+        &:before {
           z-index: -2;
           opacity: 1;
         }
       }
-      a{
+      a {
         font-weight: 500;
         display: block;
         height: 40px;
         line-height: 40px;
         -webkit-transition: -webkit-transform 0.2s ease;
         transition: transform 0.2s ease;
-        &:hover{
+        &:hover {
           -webkit-transform: translate(0, -5px);
           -ms-transform: translate(0, -5px);
           transform: translate(0, -5px);
-          color: rgba(253,23,0,0.8);
+          color: rgba(253, 23, 0, 0.8);
         }
       }
     }
   }
 }
-.items-preview{
+
+#items-preview.show {
+  opacity: 1;
+  z-index: 9999;
+}
+
+.items-preview {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   overflow: hidden;
   position: absolute;
-  color: #ffffff;
-  display: block;
-  height: 230px;
+  height: 190px;
   width: 100%;
-  z-index: 888;
+  display: block;
+  opacity: 0;
+  z-index: -20;
   background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 40px;
+  .item-group {
+    position: relative;
+    width: 1220px;
+    margin: 0 auto;
+    overflow: hidden;
+    .item {
+      width: 28%;
+      float: left;
+      padding: 0 27px;
+      a {
+        display: block;
+        color: #ffffff;
+        h3 {
+          width: 305px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          opacity: .6;
+          font-size: 15px;
+          line-height: 26px;
+          height: 52px;
+        }
+        .content {
+          display: inline-block;
+          width: 66%;
+          p {
+            height: 92px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            opacity: .3;
+            line-height: 22px;
+            font-size: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+          }
+        }
+        img {
+          margin-left: 12px;
+          position: relative;
+          top: -10px;
+          display: inline-block;
+          width: 95px;
+          height: 69px;
+        }
+        span {
+          display: block;
+          color: rgba(253, 23, 0, 0.8);
+          font-size: 12px;
+          opacity: .6;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
+
+.cont {
+  position: relative;
+  .slider {
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+    .post-mask {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .post-mask-top {
+      background: -webkit-linear-gradient(-7.38deg, #7e78cc 0%, rgba(135, 115, 194, 0.82) 10.99%, rgba(158, 103, 166, 0.5) 29.97%, rgba(195, 84, 121, 0.1) 54.17%, rgba(201, 83, 115, 0.4) 69.21%, rgba(216, 79, 98, 0.79) 89.5%, #e34c56 100%);
+      background: -webkit-gradient(linear, 4.62% 36.26%, 88.5% 61.65%, color-stop(0, #7e78cc), color-stop(0.1099, rgba(135, 115, 194, 0.82)), color-stop(0.2997, rgba(158, 103, 166, 0.5)), color-stop(0.5417, rgba(195, 84, 121, 0.1)), color-stop(0.6921, rgba(201, 83, 115, 0.4)), color-stop(0.895, rgba(216, 79, 98, 0.79)), color-stop(1, #e34c56));
+      background: -ms-linear-gradient(-7.38deg, #7e78cc 0%, rgba(135, 115, 194, 0.82) 10.99%, rgba(158, 103, 166, 0.5) 29.97%, rgba(195, 84, 121, 0.1) 54.17%, rgba(201, 83, 115, 0.4) 69.21%, rgba(216, 79, 98, 0.79) 89.5%, #e34c56 100%);
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#7E78CC', endColorstr='#E34C56' ,GradientType=0)";
+      background: -webkit-linear-gradient(352.62deg, #7e78cc 0%, rgba(135, 115, 194, 0.82) 10.99%, rgba(158, 103, 166, 0.5) 29.97%, rgba(195, 84, 121, 0.1) 54.17%, rgba(201, 83, 115, 0.4) 69.21%, rgba(216, 79, 98, 0.79) 89.5%, #e34c56 100%);
+      background: linear-gradient(97.38deg, #7e78cc 0%, rgba(135, 115, 194, 0.82) 10.99%, rgba(158, 103, 166, 0.5) 29.97%, rgba(195, 84, 121, 0.1) 54.17%, rgba(201, 83, 115, 0.4) 69.21%, rgba(216, 79, 98, 0.79) 89.5%, #e34c56 100%);
+    }
+    .post-mask-bottom {
+      background: -webkit-linear-gradient(0deg, #2678ff 31.01%, #3373f0 38.26%, #5365c9 52.2%, #884e89 71.43%, #d13032 94.97%, #e1291f 100%);
+      background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0.3101, #2678ff), color-stop(0.3826, #3373f0), color-stop(0.522, #5365c9), color-stop(0.7143, #884e89), color-stop(0.9497, #d13032), color-stop(1, #e1291f));
+      background: -ms-linear-gradient(0deg, #2678ff 31.01%, #3373f0 38.26%, #5365c9 52.2%, #884e89 71.43%, #d13032 94.97%, #e1291f 100%);
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#2678FF', endColorstr='#E1291F' ,GradientType=0)";
+      background: linear-gradient(90deg, #2678ff 31.01%, #3373f0 38.26%, #5365c9 52.2%, #884e89 71.43%, #d13032 94.97%, #e1291f 100%);
+      opacity: 0.4;
+    }
+  }
+  .bg-img {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background: url('http://images.ifanr.cn/wp-content/uploads/2015/09/force-touch-story.jpg') center center no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .full-width {
+    margin-top: 10%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    .post-wrapper {
+      width: 1120px;
+      margin: 0 auto;
+      .tag {
+        span{
+          display: inline-block;
+          padding: 4px 20px;
+          color: #FFFFFF;
+          background-color: #df3120;
+          font-weight: bold;
+        }
+      }
+      h2 {
+        max-width: 600px;
+        display: inline-block;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 40px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 4px 10px;
+        margin: 20px 0 4px;
+        color: #ffffff;
+      }
+      .post-item-content {
+        max-width: 600px;
+        margin: 20px 0;
+        font-size: 16px;
+        opacity: 0.6;
+        color: #FFF;
+        text-shadow: 1px 1px 1px #000;
+      }
+    }
+  }
+}
+
